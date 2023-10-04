@@ -34,22 +34,12 @@ int main()
 
     float sq=b*b-4*a*c;
     if(a==0){
-     if(b==0)
-        printf("The answer is %.2f\n",-(float)c/b);
-         else printf("No solution\n");
+
 
     }
 
-    else
-        if(sq==0) {
-         printf("The answer is %.2f\n",-(float)b/(2*a));
-        }
-         else if(sq<0) printf("No solution\n");
-         else {
-            printf("the answer is %.2f\n",(-b+sqrt(b*b)-4*a*c)/(2*a));
-            printf("and %.2f\n",(-b-sqrt(b*b)-4*a*c)/(2*a));
-
-         }
+    x1=(-b+sqrt(b*b)-4*a*c)/(2*a);
+    x2=(-b-sqrt(b*b)-4*a*c)/(2*a);
 
     return 0;
-    }
+}
