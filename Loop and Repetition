@@ -28,3 +28,31 @@ int main()
     return 0;
     
 }
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+
+int main()
+{
+    int x,i;
+    int count=0;
+    // 1.Get that number
+    printf("Input a numbers:");
+    scanf("%d",&x);
+    
+    // 2.Loop from 1 --> ?
+    for(i=1;i<=x;i++ ){
+        if(x%i==0 ) count++;
+        
+    // 3.Check if the number in the loop can divide that number
+    if(count>2) break;
+    
+    }
+    // 4.Check how many number can divide that number
+    
+    // 5.Prime =2 /Not prime !=2*/
+    if(count ==2 ) printf("It's a prime number ^-^");
+    else printf("It's not a prime number Y_Y");
+    
+    return 0;
+    
+}
