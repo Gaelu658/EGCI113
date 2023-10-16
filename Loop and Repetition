@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main()
+{
+    int a,b;
+    /*1. Input two numbers*/
+    printf("Input two numbers(a b)");
+    scanf("%d %d",&a,&b);
+    
+    /*2. Loop to find the gcd*/
+    int i,gcd;
+    int n;
+    if(a>b) n=b;
+    else n=a;
+    
+    printf("The common divosors are:");
+    for(i=1; i<=a ;i++){
+        if(a%i==0 && b%i==0) {
+        printf("%3d",i);
+        gcd= i;
+        }
+        /*if(x==3) break;
+        printf("%d" ,x);
+        if(x==3) break; */
+    }
+    printf(" The gcd of %d and %d is %d",a,b,gcd);
+    
+    return 0;
+    
+}
