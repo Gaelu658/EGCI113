@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int i,j,n;
+// 1.change 10 to input value
+// 2.triangle -> pyramid
+// 3.change a value of j to number of line
+    printf("How many lines?");
+    scanf("%d",&n);
+
+    for(i=0;i<10;i++){
+        //printf("i=%d",i);
+        for(j=n;j>i;j--){
+        printf(" ");
+
+        }
+        for(j=0;j<=i;j++){
+           printf("%3d",j);
+
+        }
+    printf("\n");
+    }
+
+
+     return 0;
+
+}
+
