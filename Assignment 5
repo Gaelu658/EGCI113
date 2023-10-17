@@ -1,21 +1,42 @@
-1.
 #include <stdio.h>
 
-int main()
+/*int main()
 {
+// Question 1
     int x,i,count;
     printf("Input a number:");
     scanf("%d",&x);
     count=0;
-    
+
     while(x >0){
         if( x%10==3) count++;
         x/=10;
-        
+
     }
-    
+
     printf("There are %d 3's in this number\n",count);
-    
-    return 0;  
-    
+*/
+// Question 2
+    int reverseNumber(int number) {
+    int x = 0;
+
+    while (number > 0) {
+        int y = number % 10;
+        x = x * 10 + y;
+        number = number / 10;
+    }
+
+    return x;
+}
+
+int main() {
+    int i, reversedNumber;
+    printf("Enter a number: ");
+    scanf("%d", &i);
+
+    reversedNumber = reverseNumber(i);
+
+    printf("Reversed number: %d\n", reversedNumber);
+
+    return 0;
 }
