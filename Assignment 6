@@ -17,7 +17,7 @@ int main()
         printf("\n");
     }
 // Bottom part of the diamond
-    for(i=n;i>0;i--){
+    for(i=n-1;i>0;i--){
         //printf("i=%d",i);
         for(j=i;j<n;j++) printf("  ");
         for(j=0;j<=i;j++) printf("%4s","*");
