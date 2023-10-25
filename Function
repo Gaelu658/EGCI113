@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+// 1. Function prototype
+void square(int);//
+void my_pow(int,int);//
+/* my_pow(5,3);
+   5*5*5
+*/
+
+int main()
+{
+    int a=10;
+    square(a); // 2. Function call
+    square(a+2);//
+    square(4);//
+    printf("a=%d\n",a);
+    my_pow(3,3);
+    my_pow(2,5);
+    return 0;
+}
+// 3. Function implementation
+void square(int x){
+
+    x*=x;
+    printf("%d\n",x);
+
+}
+void my_pow(int x,int y){ //5^3
+    int i,r;
+    r=1;
+    for(i=0;i<y;i++) //5*5*5
+    r*=x;
+
+    /*
+     some calculations
+    */
+    printf("%d^%d=%d\n",x,y,r);
+
+}
