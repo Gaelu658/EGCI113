@@ -43,3 +43,5 @@ void my_pow(int x,int y){ //5^3
     printf("%d^%d=%d\n",x,y,r);
 
 }
+
+int trigo(int,int);-----------------------------To be continue
