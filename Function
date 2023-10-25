@@ -17,6 +17,12 @@ int main()
     my_pow(3,3);
     my_pow(2,5);
     return 0;
+/*
+    a=my_pow(2,3); //2*2*2=8
+    my_pow(a,2);
+    a=my_pow(a,1);
+    printf("a=%d\n",a);// 8
+*/
 }
 // 3. Function implementation
 void square(int x){
