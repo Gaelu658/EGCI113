@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <math.h>  // Include the math library for trigonometric functions
+
+// Function prototypes
+void trig_functions(double);
+
+int main() {
+    trig_functions(30.0);  // Calling trigonometric functions
+    trig_functions(45.0);  // Calling trigonometric functions
+
+    return 0;
+}
+
+// Function implementations
+void trig_functions(double degrees) {
+    double radians = degrees * (M_PI / 180.0);  // Convert degrees to radians
+    printf("Trigonometric functions for %.2lf degrees:\n", degrees);
+    printf("Sin(%.2lf) = %.4lf\n", degrees, sin(radians));
+    printf("Cos(%.2lf) = %.4lf\n", degrees, cos(radians));
+    printf("Tan(%.2lf) = %.4lf\n", degrees, tan(radians));
+    printf("\n");
+}
