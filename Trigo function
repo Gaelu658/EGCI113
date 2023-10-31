@@ -20,3 +20,49 @@ void trig_functions(double degrees) {
     printf("Tan(%.2lf) = %.4lf\n", degrees, tan(radians));
     printf("\n");
 }
+float Trigo(int,int);
+int square(int);
+
+int main()
+{
+    int a,b;
+    float c;
+    printf("Please input 2 adjacent sides of the right triangle:");
+    scanf("%d %d",&a,&b);
+    c=Trigo(a,b);
+    printf("The third side is %.2f",c);
+    printf("%d %d=.2f"a,b,c);
+    return 0;
+}
+////////////////////////////////////////////////////////////////////////////////////////////
+#include <stdio.h>
+#include <math.h>
+
+float Trigo(int,int);
+int square(int);
+
+int main()
+{
+    int a,b;
+    float c;
+    printf("Please input 2 adjacent sides of the right triangle:");
+    scanf("%d %d",&a,&b);
+    c=Trigo(a,b);
+    printf("The third side is %.2f",c);
+    printf("%d %d=.2f"a,b,c);
+    return 0;
+}
+
+float Trio(int x,int y){
+    float z=square(square(x)+=square(y));
+    // z=sqrt(x^2+y^2);
+    int x_sq=square(x);
+    int y_sq=square(y);
+    z=sqrt(x_sq+y_sq);
+    return z;
+
+}
+
+int square(int x){
+    return x*x;
+}
