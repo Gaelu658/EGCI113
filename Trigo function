@@ -1,4 +1,36 @@
 #include <stdio.h>
+#include <math.h>
+
+float Trigo(int, int);
+int square(int);
+
+int main() {
+    int a, b;
+    float c;
+    printf("Please input 2 adjacent sides of the right triangle:");
+    scanf("%d %d", &a, &b);
+    c = Trigo(a, b);
+    printf("The third side is %.2f\n", c);
+    return 0;
+}
+
+float Trigo(int x, int y) {
+    //  z=sqrt(x^2+y^2);
+    int x_sq = square(x);
+    int y_sq = square(y);
+    float z = sqrt(x_sq + y_sq);
+    return z;
+}
+
+int square(int x) {
+    return x * x;
+}
+// The end.
+////////////////////////////////////////////////// Second one are sin,cos and tan which isn't in the question but I already did, so why don't I save it? /////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////// Second one are sin,cos and tan which isn't in the question but I already did, so why don't I save it? /////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////// Second one are sin,cos and tan which isn't in the question but I already did, so why don't I save it? /////////////////////////////////////////////////////////////////////
+
+#include <stdio.h>
 #include <math.h>  // Include the math library for trigonometric functions
 
 // Function prototypes
@@ -33,32 +65,4 @@ int main()
     printf("The third side is %.2f",c);
     printf("%d %d=.2f"a,b,c);
     return 0;
-}
-////////////////////////////////////////////////////////////////////////////////////////////
-#include <stdio.h>
-#include <math.h>
-
-float Trigo(int, int);
-int square(int);
-
-int main() {
-    int a, b;
-    float c;
-    printf("Please input 2 adjacent sides of the right triangle:");
-    scanf("%d %d", &a, &b);
-    c = Trigo(a, b);
-    printf("The third side is %.2f\n", c);
-    return 0;
-}
-
-float Trigo(int x, int y) {
-    //  z=sqrt(x^2+y^2);
-    int x_sq = square(x);
-    int y_sq = square(y);
-    float z = sqrt(x_sq + y_sq);
-    return z;
-}
-
-int square(int x) {
-    return x * x;
 }
