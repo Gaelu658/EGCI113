@@ -47,3 +47,36 @@ long fact(int){
 }
 int nCr(int,int);
 int sum(int);
+/////////////////////////////////////////////////////////////////////
+long fact(int);
+int main(){
+
+
+}
+
+
+long fact(int x){
+    long f=1;
+
+    for(f=0;x>0;x--){
+        f*=x;
+    }
+
+    return f;
+
+}
+int nCr(int n, int r){
+
+}
+
+
+int sum(int x){
+    int s=0;
+
+    for(s=0;x>0;x--){
+        s+=x;
+    }
+
+    return s;
+
+}
