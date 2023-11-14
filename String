@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//strlen = lenght of string
+//strcpy = copy
+int main()
+{
+    /*char c[10]="Hello";
+
+    printf("%s\n",c);
+    printf("\n%c\n",c[2]);
+
+    printf("Input your string:");
+    scanf("%s",c);
+
+    c[5] ='\0';
+
+    printf("%s\n",c);*/
+
+    //c="Good";
+
+    char str1[10],str2[10],str3[20];
+    //scanf("%s %s",str1,str2);
+    //printf("%s\n",str3);
+
+    //gets(str3);
+    scanf("%s",str3);
+    strcpy(str2,str3);
+
+    printf("%s\n",str3);
+    printf("%d\n",strlen(str2));
+    int i;
+    for(i=strlen(str3)-1;i>=0;i--){
+        printf("%c",str3[i]);
+    }
+
+    /*str3[3]='\0';
+    printf("%s\n",str3);
+    printf("%d",strlen(str3));*/
+
+    return 0;
+}
