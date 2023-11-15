@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct student{
+    char name[30];
+    double score,grade;
+};
+
+int main(){
+    struct student st1,st2;
+    printf("What's your name?\n");
+    gets(st1.name);
+
+    printf("what's your score?\n");
+    scanf("%lf",&st1.score);
+
+    if (st1.score>70) st1.grade=4;
+    else if (st1.score>50) st1.grade=2;
+    else st1.grade=0;
+
+    printf("%s has score %.2f.\n",st1.name,st1.score);
+    printf("%s get grade %.0f.\n",st1.name,st1.grade);
+
+    return 0;
+}
