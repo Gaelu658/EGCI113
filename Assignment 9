@@ -1,106 +1,100 @@
-#define MaxRow 10 //array-maximum no of rows
-#define MinRow 1 //array-minimum no of rows
-#define MaxCol 6 //array-maximum no of columns
-#define MinCol 1 //array-minimum no of columns
-
 #include <stdio.h>
 
-int main()
-{
+#define MaxRow 10 // array-maximum no of rows
+#define MinRow 1  // array-minimum no of rows
+#define MaxCol 6  // array-maximum no of columns
+#define MinCol 1  // array-minimum no of columns
+
+// Function declarations
+int ReadArraySize(int, int);
+void ReadArray(int[][MaxCol], int, int);
+void InitArrayC(int[][MaxCol], int[][MaxCol], int[][MaxCol], int, int);
+void DispArray(int[][MaxCol], int, int);
+void TransposeMatrix(int[][MaxCol], int[][MaxCol], int, int);
+
+int main() {
     int RowSize, ColSize;
-    int a[MaxRow][MaxCol],//1st input array
-     b[MaxRow][MaxCol],//2nd input array
-     c[MaxRow][MaxCol];//resulting array
+    int a[MaxRow][MaxCol], // 1st input array
+        b[MaxRow][MaxCol], // 2nd input array
+        c[MaxRow][MaxCol]; // resulting array
 
-//Functions declaration
-        int ReadArraySize(int,int);
-       void ReadArray(int [][MaxCol], int[][MaxCol], int, int),
-             InitArrayC(int [][MaxCol], int[][MaxCol], int[][MaxCol], int, int),
-             DispResult(int [][MaxCol], int[][MaxCol], int[][MaxCol], int, int);
-
+    // Get array size
     printf("Please specify no. of rows of arrays: ");
-    RowSize=ReadArraySize(MinRow,MaxRow);
+    RowSize = ReadArraySize(MinRow, MaxRow);
 
     printf("Please specify no. of columns of arrays: ");
-    ColSize=ReadArraySize(MinCol,MaxCol);
+    ColSize = ReadArraySize(MinCol, MaxCol);
     printf("Array size is set to: [%d] [%d]\n", RowSize, ColSize);
 
+    // Input arrays
     printf("Input your array a\n");
     ReadArray(a, RowSize, ColSize);
 
     printf("Input your array b\n");
     ReadArray(b, RowSize, ColSize);
 
-    InitArrayc(a, b, RowSize, ColSize);//init arrays a & b
-
-//find array c[][] = array a[][] + b[][]
+    // Calculate array c[][] = array a[][] + b[][]
     InitArrayC(a, b, c, RowSize, ColSize);
 
-    DispResult(a, b, c, RowSize, ColSize);//display result///////////////////////////////////////////
+    // Display results
+    printf("Array a\n");
+    DispArray(a, RowSize, ColSize);
 
-    printf( "please type any key to exit: ");
+    printf("Array b\n");
+    DispArray(b, RowSize, ColSize);
+
+    printf("Array c\n");
+    DispArray(c, RowSize, ColSize);
+
+    // Transpose array a
+    TransposeMatrix(a, c, RowSize, ColSize);
+
+    // Display transposed array a
+    printf("Transposed Array a\n");
+    DispArray(c, ColSize, RowSize);
+
+    printf("Please type any key to exit: ");
     getchar();
 
     return 0;
 }
 
-
-int ReadArraySize(int MinSize,int MaxSize) //read array size, row then column
-{
+int ReadArraySize(int MinSize, int MaxSize) {
     int size;
-	do{
-      	printf(" range[%d..%d] : ",MinSize,MaxSize);
-	    scanf("%d", &size);
-   	}while(size > MaxSize || size <= MinSize);
+    do {
+        printf(" range[%d..%d] : ", MinSize, MaxSize);
+        scanf("%d", &size);
+    } while (size > MaxSize || size <= MinSize);
 
     return size;
+}
 
-}//end
+void ReadArray(int arr[][MaxCol], int RowSize, int ColSize) {
+    for (int i = 0; i < RowSize; i++)
+        for (int j = 0; j < ColSize; j++) {
+            printf("Enter element at position [%d][%d]: ", i, j);
+            scanf("%d", &arr[i][j]);
+        }
+}
 
+void InitArrayC(int a[][MaxCol], int b[][MaxCol], int c[][MaxCol], int RowSize, int ColSize) {
+    for (int i = 0; i < RowSize; i++)
+        for (int j = 0; j < ColSize; j++)
+            c[i][j] = a[i][j] + b[i][j];
+}
 
+void DispArray(int arr[][MaxCol], int RowSize, int ColSize) {
+    for (int i = 0; i < RowSize; i++) {
+        for (int j = 0; j < ColSize; j++)
+            printf("%4d", arr[i][j]);
+        printf("\n");
+    }
+    printf("\n");
+}
 
-void InitArray(int a[][MaxCol], int b[][MaxCol], int RowSize, int ColSize)
-{
-	int i, j;
+void TransposeMatrix(int a[][MaxCol], int result[][MaxCol], int rows, int cols) {
+    for (int i = 0; i < rows; i++)
+        for (int j = 0; j < cols; j++)
+            result[j][i] = a[i][j];
 
-	printf("\nInitializing arrays a and b..\n");
-	for(i=0;i<RowSize;i++)
-	    for(j=0;j<ColSize;j++)
-     	    {
-      	a[i][j]= i+j;
-		b[i][j]= 2*(i+j);
-          }
-}//end
-
-
-
-
-void InitArrayC(int a[][MaxCol], int b[][MaxCol], int c[][MaxCol], int RowSize, int ColSize)
-{
-	int i, j;
-
-	printf("Calculating array c..\n\n");
-	for(i=0;i<RowSize;i++)
-	    for(j=0;j<ColSize;j++)
-		c[i][j]= a[i][j]+ b[i][j];
-}//end InitArrayC()
-
-
-
-void DispResult(int a[][MaxCol], int b[][MaxCol], int c[][MaxCol], int RowSize, int ColSize)
-{
-	int i, j;
-
-   	for(i=0;i<RowSize;i++)
-	{
-   	     for(j=0;j<ColSize;j++)
-		printf("%4d",a[i][j]);
-      	     printf("  ");
-	     for(j=0;j<ColSize;j++)
-         	printf("%4d",b[i][j]);
-      	     printf("  ");
-	     for(j=0;j<ColSize;j++)
-		printf("%4d",c[i][j]);
-	     printf("\n");
-	}
 }//end DispResult()
