@@ -52,6 +52,7 @@ struct student{
 int getStudent(struct student[]);
 void convertGrade(struct student[]);
 void showStudent(struct student);
+void showHighest(struct student);
 
 int main()
 {
@@ -91,4 +92,16 @@ void convertGrade(struct student st[]){
 
 void showStudent(struct student st){
     printf("%s has score %.2f and grade %c\n",cst[i].name,cst[i].score,cst[i].grade);
+}
+
+void showHighest(struct student st[],int n){
+    struct student max=st[0];
+    int i;
+    for(i=1;i<n;i++){
+        if(max.score < st[i].score )
+            max=st[i];
+    }
+
+    printf("==Student With the Highest score is ==\n");
+    showStudent(max);
 }
