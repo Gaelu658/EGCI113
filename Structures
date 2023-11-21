@@ -38,3 +38,57 @@ int main()
 
     return 0;
 }
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#include <stdio.h>
+#define SIZE 3
+
+struct student{
+    char name[20];//string
+    double score;
+    char grade;
+
+};
+
+int getStudent(struct student[]);
+void convertGrade(struct student[]);
+void showStudent(struct student);
+
+int main()
+{
+    struct student cst[SIZE];
+    int i,n;
+    n = getStudent(cst);// 2 name&score
+    convertGrade(cst);// grade
+
+    for(i=0;i<n;i++)
+        showStudent(cst[i]);
+        showHighest(cst,n);
+
+    return 0;
+}
+
+int getStudent(struct student st[]){
+int i,n;
+    for(i=0;i<n;i++){
+        printf("Input name#%d:",i+1);
+        fflush(stdin);
+        scanf("%s",st[i].name);
+        printf("Score:");
+        scanf("%lf",&st[i].score);
+    }
+
+}
+
+void convertGrade(struct student st[]){
+    for(i=0;i<n;i++){
+    if(st[i].score>=80) st[i].grade='A';
+        else if(st[i].score>=70) st[i].grade='B';
+        else if(st[i].score>=60) st[i].grade='C';
+        else st[i].grade='F';
+    }
+
+}
+
+void showStudent(struct student st){
+    printf("%s has score %.2f and grade %c\n",cst[i].name,cst[i].score,cst[i].grade);
+}
