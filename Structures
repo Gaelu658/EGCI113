@@ -1,0 +1,40 @@
+#include <stdio.h>
+#define SIZE 3
+
+struct student{
+    char name[20];//string
+    double score;
+    char grade;
+
+};
+
+int main()
+{
+    struct student cst[SIZE];
+    int i;
+    for(i=0;i<SIZE;i++){
+        printf("Input name#%d:",i+1);
+        fflush(stdin);
+        scanf("%s",cst[i].name);
+        printf("Score:");
+        scanf("%lf",&cst[i].score);
+
+        if(cst[i].score>=80) cst[i].grade='A';
+        else if(cst[i].score>=70) cst[i].grade='B';
+        else if(cst[i].score>=60) cst[i].grade='C';
+        else cst[i].grade='F';
+
+    }
+/*
+0-59 : F
+60-69 : C
+70-79 : B
+80+ : A
+*/
+    for(i=0;i<SIZE;i++){
+        printf("%s has score %.2f and grade %c\n",cst[i].name,cst[i].score,cst[i].grade);
+
+    }
+
+    return 0;
+}
